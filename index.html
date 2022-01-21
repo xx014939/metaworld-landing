@@ -1,0 +1,133 @@
+<header>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+    <script src="/scrollissimo.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</header>
+<body>
+    <div class="hero-container">
+        <img class="hero-image" src="/assets/New World.webp">
+        <div class="hero-text-container">
+            <p><strong>Your</strong>Meta.World</p>
+            <p>YourMeta.World is a brand new Metaverse created by Naail El-Sawah as an entry into the Moralis 2022 Hackathon. YourMeta.World is a proof of concept for what is possible when the Metaverse is truly decentralised.</p>
+        </div>
+    </img>
+    </div>
+    <div class="founder">
+        <div class="founder__text-container">
+            <h2>Founder</h2>
+            <p>My name is Naail El-Sawah and I am a recent Computer Science graduate from the United Kingdom. I first began buying Crypto currencies back in 2017 just as that years bull run was forming. At first my interest in Crypto was purely from an investment point of view, but I gradually became more interested in the technology behind the tokens I was investing in and their potential use cases.</p>
+            <p>During my second year of university I interned at Zubr VR (among other places), and fell further in love with Virtual Reality technology. During the pandemic I began to work as a web developer, specialising in Ecommerce platforms such as Shopify.  Over the last year I have become fascinated with NFT's and their integration into 3D digital worlds.</p>
+            <p>When Mark Zuckerberg announced to the world that he was creating the "Metaverse", the Crypto community became flooded with projects proclaiming to the be the Metaverse of the future. We saw centralised, finite digital land sold at astonishingly high prices to those new to crypto who had "deep pockets" so to speak. We saw the mass monetisation of low value projects which promised to offer holders "a place in the Metaverse". And we saw promising technologies of the future overhyped and overvalued in their infancies, in order to earn a quick buck.</p>
+            <p>This was my motivation for YourMeta.World. I set out to create a project which offered some solutions to the problems I saw in todays Metaverse projects.</p>
+        </div>
+        <div class="founder__image-container">
+            <img src="/founder.jpg"/>
+        </div>
+    </div>
+    <div class="problem__container">
+        <div class="problem__container-header">Problem One</div>
+    </div>
+</body>
+
+<style>
+    .problem__container-header {
+        font-size: 35px;
+        text-align: center;
+        padding-top: 20px;
+        margin-right: -3000px;
+        color: white;
+    }
+    .problem__container {
+        width: 100%;
+        height: 1000px;
+        background: #0a1220;
+        opacity: 0;
+        transform: rotate(180deg);
+        box-shadow: 5px 5px 5px 5px #0ff;
+        
+    }
+    .founder {
+        margin-top: 793px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    .founder__image-container {
+        width: 50%;
+    }
+    .founder__image-container img {
+        width: 100%;
+    }
+    .founder__text-container {
+        text-align: center;
+        flex-basis: 50%;
+        padding-top: 2%;
+        padding-left: 50px;
+        padding-right: 50px;
+        background: #0a1220;
+        color: white;
+        margin-left: -350px;
+        opacity: 0;
+    }
+    .founder__text-container h2 {
+        font-size: 35px;
+    }
+    .hero-text-container {
+        width: 50%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: black;
+        padding-left: 75px;
+        margin-top: -1100px;
+        opacity: 0;
+    }
+    .hero-text-container p:nth-child(1) {
+        font-size: 55px;
+    }
+    .hero-text-container h1 {
+        font-size: 35px;
+    }
+    .hero-text-container p {
+        font-size: 20px;
+    }
+
+    body {
+        margin: 0px !important;
+        font-family: 'Open Sans', sans-serif
+    }
+
+    .hero-image {
+        width: 100%;
+    }
+
+    
+</style>
+
+<script>
+
+    document.addEventListener('scroll', () => {
+        scrollissimo.knock()
+    })
+    
+
+    var divyTween = TweenLite.to(document.querySelector('.hero-text-container'), 50, { opacity: 1 });
+    scrollissimo.add(divyTween, 0, 25);
+
+    var divyTween2 = TweenLite.to(document.querySelector('.founder__text-container'), 700, { opacity: 1, marginLeft: 0 });
+    scrollissimo.add(divyTween2, 50, 155);
+
+    var divyTween3 = TweenLite.to(document.querySelector('.problem__container'), 1000, { rotation:'0deg', opacity: 1});
+    scrollissimo.add(divyTween3, 500, 550);
+
+    var divyTween4 = TweenLite.to(document.querySelector('.problem__container-header'), 1000, { marginRight: 0});
+    scrollissimo.add(divyTween4, 700, 725);
+
+</script>

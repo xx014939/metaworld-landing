@@ -1,0 +1,32 @@
+<header>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+    <script src="/scrollissimo.min.js"></script>
+    <style>
+        #Divy{
+
+    
+    height: 50px;
+    width: 50px;
+    
+    background: red;
+}
+
+#body {
+    height: 10000px;
+}
+    </style>
+</header>
+<body id="body">
+    <div id="Divy"></div>
+</body>
+<script>
+
+    document.addEventListener('scroll', () => {
+        scrollissimo.knock()
+    })
+    
+
+    var divyTween = TweenLite.to(document.getElementById('Divy'), 1000, { width: 600, height: 500, marginTop: 500 });
+    scrollissimo.add(divyTween, 0, 25);
+</script>
+
