@@ -8,7 +8,7 @@
 </header>
 <body>
     <div class="hero-container">
-        <img class="hero-image" src="/assets/New World.webp">
+        <img class="hero-image" src="/New World.webp">
         <div class="hero-text-container">
             <p><strong>Your</strong>Meta.World</p>
             <p>YourMeta.World is a brand new Metaverse created by Naail El-Sawah as an entry into the Moralis 2022 Hackathon. YourMeta.World is a proof of concept for what is possible when the Metaverse is truly decentralised.</p>
@@ -29,10 +29,59 @@
     </div>
     <div class="problem__container">
         <div class="problem__container-header">Problem One</div>
+        <div class="problem__container-body">
+            <p>Most Meteverse applications currently contain a finite amount of land, owned by a central authority and auctioned off in public and private "land sales" for extortionate amounts of money.</p>
+            <p>This is precisely the opposite of what a block chain based Metaverse is meant to be. The Metaverse should be a fundamentally decentralised digital landscape of creators and consumers.</p>
+        </div>
+        <img src="/grassblock.png"/>
+    </div>
+    <div class="problem__container-two">
+        <div class="problem__container-header-two">Problem One</div>
+        <div class="problem__container-body">
+            <p>Most Meteverse applications currently contain a finite amount of land, owned by a central authority and auctioned off in public and private "land sales" for extortionate amounts of money.</p>
+            <p>This is precisely the opposite of what a block chain based Metaverse is meant to be. The Metaverse should be a fundamentally decentralised digital landscape of creators and consumers.</p>
+        </div>
+        <img src="/grassblock.png"/>
     </div>
 </body>
 
 <style>
+
+.problem__container-header-two {
+        font-size: 35px;
+        text-align: center;
+        padding-top: 20px;
+        color: white;
+    }
+    .problem__container-two {
+        width: 100%;
+        background: #0a1220;
+        opacity: 0;
+        box-shadow: 5px 5px 5px 5px #0ff;
+        min-height: 600px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: -3000px;
+        
+    }
+
+    .problem__container-two img {
+        max-width: 250px;
+        margin: auto;
+    }
+
+    .problem__container-body p {
+        
+    }
+
+    .problem__container-body {
+        width: 50%;
+        color: white;
+        margin: auto;
+        text-align: center;
+    }
+
     .problem__container-header {
         font-size: 35px;
         text-align: center;
@@ -42,13 +91,23 @@
     }
     .problem__container {
         width: 100%;
-        height: 1000px;
         background: #0a1220;
         opacity: 0;
         transform: rotate(180deg);
         box-shadow: 5px 5px 5px 5px #0ff;
+        min-height: 600px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 0px;
         
     }
+
+    .problem__container img {
+        max-width: 250px;
+        margin: auto;
+    }
+
     .founder {
         margin-top: 793px;
         display: flex;
@@ -124,10 +183,18 @@
     var divyTween2 = TweenLite.to(document.querySelector('.founder__text-container'), 700, { opacity: 1, marginLeft: 0 });
     scrollissimo.add(divyTween2, 50, 155);
 
-    var divyTween3 = TweenLite.to(document.querySelector('.problem__container'), 1000, { rotation:'0deg', opacity: 1});
-    scrollissimo.add(divyTween3, 500, 550);
+    var divyTween3 = TweenLite.to(document.querySelector('.problem__container'), 1000, { rotation:'0deg', width: '100%',opacity: 1});
+    scrollissimo.add(divyTween3, 600, 650);
 
     var divyTween4 = TweenLite.to(document.querySelector('.problem__container-header'), 1000, { marginRight: 0});
     scrollissimo.add(divyTween4, 700, 725);
+
+    var divyTween5 = TweenLite.to(document.querySelector('.problem__container-two'), 1500, { marginLeft: 0,opacity: 1});
+    scrollissimo.add(divyTween5, 750, 775);
+
+    var divyTween6 = TweenLite.to(document.querySelector('.problem__container-header-two'), 1000, { marginRight: 0});
+    scrollissimo.add(divyTween6, 775, 800);
+
+    // transform:'rotateY(45deg)'
 
 </script>
