@@ -107,7 +107,7 @@
         width: 100%;
         background: #0a1220;
         opacity: 0;
-        box-shadow: 5px 5px 5px 5px #0ff;
+        box-shadow: 1px 1px 1px 1px #0ff;
         min-height: 600px;
         display: flex;
         flex-direction: column;
@@ -131,7 +131,7 @@
         width: 100%;
         background: #0a1220;
         opacity: 0;
-        box-shadow: 5px 5px 5px 5px #0ff;
+        box-shadow: 1px 1px 1px 1px #0ff;
         min-height: 600px;
         display: flex;
         flex-direction: column;
@@ -168,7 +168,7 @@
         background: #0a1220;
         opacity: 0;
         transform: rotate(180deg);
-        box-shadow: 5px 5px 5px 5px #0ff;
+        box-shadow: 1px 1px 1px 1px #0ff;
         min-height: 600px;
         display: flex;
         flex-direction: column;
@@ -234,7 +234,9 @@
 
     body {
         margin: 0px !important;
-        font-family: 'Open Sans', sans-serif
+        font-family: 'Open Sans', sans-serif;
+        overflow-x: hidden;
+        
     }
 
     .hero-image {
@@ -257,7 +259,7 @@
     var divyTween2 = TweenLite.to(document.querySelector('.founder__text-container'), 700, { opacity: 1, marginLeft: 0 });
     scrollissimo.add(divyTween2, 50, 155);
 
-    var divyTween3 = TweenLite.to(document.querySelector('.problem__container'), 1200, { rotation:'0deg', width: '100%',opacity: 1});
+    var divyTween3 = TweenLite.to(document.querySelector('.problem__container'), 900, { rotation:'0deg', width: '100%',opacity: 1});
     scrollissimo.add(divyTween3, 600, 650);
 
     var divyTween4 = TweenLite.to(document.querySelector('.problem__container-header'), 1200, { marginRight: 0});
