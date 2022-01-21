@@ -28,24 +28,53 @@
         </div>
     </div>
     <div class="problem__container">
-        <div class="problem__container-header">Problem One</div>
+        <div class="problem__container-header">Problem One - Land</div>
         <div class="problem__container-body">
             <p>Most Meteverse applications currently contain a finite amount of land, owned by a central authority and auctioned off in public and private "land sales" for extortionate amounts of money.</p>
-            <p>This is precisely the opposite of what a block chain based Metaverse is meant to be. The Metaverse should be a fundamentally decentralised digital landscape of creators and consumers.</p>
+            <p>This is precisely the opposite of what a block chain based Metaverse is meant to be. The Metaverse should be a fundamentally decentralised digital landscape of creators and consumers, with no one entity controlling the flow of currency and/or assets.</p>
         </div>
         <img src="/grassblock.png"/>
     </div>
     <div class="problem__container-two">
-        <div class="problem__container-header-two">Problem One</div>
+        <div class="problem__container-header-two">Problem Two - True Ownserhip</div>
         <div class="problem__container-body">
-            <p>Most Meteverse applications currently contain a finite amount of land, owned by a central authority and auctioned off in public and private "land sales" for extortionate amounts of money.</p>
-            <p>This is precisely the opposite of what a block chain based Metaverse is meant to be. The Metaverse should be a fundamentally decentralised digital landscape of creators and consumers.</p>
+            <p>The vast majority of NFT's that have flooded the market at present day, corner themselves off as exclusive groups which offer exclusive benefits to their holders. Whilst it's understandable that the NFT's must have a unique selling point in order for them to be a suitable investment proposition, currently they are only usable in a specific area of the digital world.</p>
+            <p>This goes against the idea of a user truly owning their NFT, as they can only interact with it a finite space under finite conditions. This once again is the complete opposite of what a block chain based Metaverse should be. Users should be allowed to display, wear, modify and combine their NFT's in any way they see fit inside of one (or many) digital places.</p>
+            <p>They should be able to interact with their NFT's in 3D or 2D, in AR or VR or not.</p>
         </div>
-        <img src="/grassblock.png"/>
+        <img src="/bayc-footer.png"/>
     </div>
+    <div class="problem__container-three">
+        <div class="problem__container-header-three">Problem Two - Lack of Innovation</div>
+        <div class="problem__container-body">
+            <p>Perhaps most frustratingly, many NFT collections being released nowadays are very often just copy cat projects with art work that follows whatever the latest crypto meme is. These projects fail to use their considerable funds and popularity to invest in technological innovation in the Crypto space, and instead offer holders nothing more than "The best community" and a 2D piece of artwork, with promises of an exclusive digital space in Decentraland one day.</p>
+            <p></p>
+            <p>The NFT space will eventually evolve into something far greater then it currently is, however as of right now there is a severe lack in NFT tools which encourage exciting innovation and use cases among NFT creators and developers.</p>
+        </div>
+    </div>
+    <div>TECHNOLIGES USED</div>
 </body>
 
 <style>
+
+.problem__container-header-three {
+        font-size: 35px;
+        text-align: center;
+        padding-top: 20px;
+        color: white;
+    }
+    .problem__container-three {
+        width: 100%;
+        background: #0a1220;
+        opacity: 0;
+        box-shadow: 5px 5px 5px 5px #0ff;
+        min-height: 900px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: -3000px;
+        
+    }
 
 .problem__container-header-two {
         font-size: 35px;
@@ -183,10 +212,10 @@
     var divyTween2 = TweenLite.to(document.querySelector('.founder__text-container'), 700, { opacity: 1, marginLeft: 0 });
     scrollissimo.add(divyTween2, 50, 155);
 
-    var divyTween3 = TweenLite.to(document.querySelector('.problem__container'), 1000, { rotation:'0deg', width: '100%',opacity: 1});
+    var divyTween3 = TweenLite.to(document.querySelector('.problem__container'), 1200, { rotation:'0deg', width: '100%',opacity: 1});
     scrollissimo.add(divyTween3, 600, 650);
 
-    var divyTween4 = TweenLite.to(document.querySelector('.problem__container-header'), 1000, { marginRight: 0});
+    var divyTween4 = TweenLite.to(document.querySelector('.problem__container-header'), 1200, { marginRight: 0});
     scrollissimo.add(divyTween4, 700, 725);
 
     var divyTween5 = TweenLite.to(document.querySelector('.problem__container-two'), 1500, { marginLeft: 0,opacity: 1});
@@ -194,6 +223,12 @@
 
     var divyTween6 = TweenLite.to(document.querySelector('.problem__container-header-two'), 1000, { marginRight: 0});
     scrollissimo.add(divyTween6, 775, 800);
+
+    var divyTween7 = TweenLite.to(document.querySelector('.problem__container-three'), 2000, { marginLeft: 0,opacity: 1});
+    scrollissimo.add(divyTween7, 750, 775);
+
+    var divyTween8 = TweenLite.to(document.querySelector('.problem__container-header-three'), 1000, { marginRight: 0});
+    scrollissimo.add(divyTween8, 775, 800);
 
     // transform:'rotateY(45deg)'
 
