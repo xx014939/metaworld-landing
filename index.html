@@ -57,26 +57,69 @@
         <h2>Solutions</h2>
         <div class="solution-block__container">
             <div class="solution-block">
-                <h2>Some Text</h2>
+                <h2>Land</h2>
+                <p>Your Meta World views land as an infinite resource, which every wallet should be allowed to share in. Every user will have their own plot of free land which they will own forever</p>
+                <p>Every user will have their own freely expandable piece of the Metaverse, thus making buying/selling land plots redundant and removing the concept of land sales from this Metaverse.</p>
             </div>
             <div class="solution-block">
-                <h2>Some Text</h2>
+                <h2>Ownership</h2>
+                <p>Every wallets NFT's are their own, and they are free to do whatever they please with them. Your Meta World, offers a small range of tools and experiences which allow users to interact with their NFT's in a new way in VR.</p>
+                <p>Users can wear, display, wrap (around 3D objects) and touch their NFT's for the first time in their own VR traversable and expandable digital land.</p>
             </div>
             <div class="solution-block">
-                <h2>Some Text</h2>
+                <h2>Innovation</h2>
+                <p>Your Meta World hopes to offer a large range of free innovative services available to its users in the near future. At present we are able to offer the world first 3D GLTF NFT minter.</p>
+                <p>This minter allows users to upload 3D GLTF files to the IPFS network, and then dynamically load these NFT's into a 3D VR traversable environment within which they can then interact with them as if they were real objects!</p>
             </div>
         </div>
     </div>
-
-    <div>TECHNOLIGES USED</div>
+    <div class="tech-used__container">
+        <div><h2>Web 3.0 Technologies/Services Used</h2></div>
+        <div class="tech-used__logo-container">      
+            <div class="tech-log-image"><img src="/original.png"/></div>
+            <div class="tech-log-image"><img src="/avalanche.png"/></div>
+            <div class="tech-log-image"><img src="/ipfs.png"/></div>      
+        </div>
+    </div>
+    <div>
+        LINKS TO PROJECT FILES
+    </div>
 </body>
 
 <style>
+    .tech-logo-image {
+        width: 33%;
+    }
+    .tech-logo-image img {
+        width: 100%
+    }
+    .tech-used__logo-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px;
+        max-width: 1000px;
+        margin: auto;
+        align-items: center;
+    }
+    .tech-used__logo-container img {
+        width: 100%;
+        max-width: 200px;
+        margin: auto;
+    }
+    .tech-used__container {
+        width: 100%;
+        background-color: #0a1220;
+        color: white;
+        text-align: center;
+        padding: 20px;
+    }
     .solution {
         background-color: #0a1220;
         text-align: center;
         padding-top: 20px;
         color: white;
+        border: 1px solid #0ff;
     }
 
     .solution-block {
@@ -84,6 +127,12 @@
         text-align: center;
         border: 1px solid black;
         border-radius: 5px;
+        margin: 5px;
+        opacity: 0;
+    }
+
+    .solution-block:hover {
+        border: 1px solid #0ff;
     }
 
     .solution-block__container {
@@ -107,7 +156,7 @@
         width: 100%;
         background: #0a1220;
         opacity: 0;
-        box-shadow: 1px 1px 1px 1px #0ff;
+        border: 1px solid #0ff;
         min-height: 600px;
         display: flex;
         flex-direction: column;
@@ -131,7 +180,7 @@
         width: 100%;
         background: #0a1220;
         opacity: 0;
-        box-shadow: 1px 1px 1px 1px #0ff;
+        border: 1px solid #0ff;
         min-height: 600px;
         display: flex;
         flex-direction: column;
@@ -168,7 +217,7 @@
         background: #0a1220;
         opacity: 0;
         transform: rotate(180deg);
-        box-shadow: 1px 1px 1px 1px #0ff;
+        border: 1px solid #0ff;
         min-height: 600px;
         display: flex;
         flex-direction: column;
@@ -276,6 +325,9 @@
 
     var divyTween8 = TweenLite.to(document.querySelector('.problem__container-header-three'), 1000, { marginRight: 0});
     scrollissimo.add(divyTween8, 775, 800);
+
+    var divyTween9 = TweenLite.to(document.querySelectorAll('.solution-block'), 2000, { opacity: 1});
+    scrollissimo.add(divyTween9, 850, 900);
 
     // transform:'rotateY(45deg)'
 
