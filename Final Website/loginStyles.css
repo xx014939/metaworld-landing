@@ -1,0 +1,57 @@
+body {
+    background-color: #0a1220;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.login-form__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.login-form__button {
+    background-color: black;
+    color: #0ff;
+    border-radius: 5px;
+    border: none;
+    padding: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.login-form__wallet-name-input {
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+}
+
+.login-form__label {
+    font-size: 20px;
+    color: white;
+}
+
+.login-form__wallet-id {
+    background: white;
+    color: black;
+    width: 100%;
+    padding-top: 25px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.login-form__id-message {
+    color: red;
+    text-align: center;
+    margin-top: 5px;
+    display: none;
+}

@@ -1,0 +1,137 @@
+<html>
+    <head>
+        <title>YourMetaWorld Authentication</title>
+        <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+        <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="loginStyles.css">
+    </head>
+    <body class="container">
+        <div class="login-form__container">
+            <label class="login-form__label">Enter Wallet Name</label>
+            <input class="login-form__wallet-name-input" type="text" id="fname" name="fname">
+            <button onclick="login()" class="login-form__button">Authenticate Wallet</button>
+            <label class="login-form__label" style="text-align: center; margin-top: 10px;">Your wallet ID will appear below after authentication is finished</label>
+            <div class="login-form__wallet-id"></div>
+            <label class="login-form__id-message">Please save this ID as it is needed in order to access our services</label>
+        </div>
+    </body>
+</html>
+
+<script>
+    walletNameInput = document.querySelector('.login-form__wallet-name-input')
+    // authenticateButton = document.querySelector('.login-form__button')
+
+    // Start Moralis Server Connection
+    const serverUrl = "https://v9oc9hiaeyfd.usemoralis.com:2053/server";
+    const appId = "5oM1IKJp6DztgB8iWnmttGpebc1LWCxD8XFYdqU7";
+    Moralis.start({ serverUrl, appId });
+
+    // Define IPFS link resolver, used for creating img urls in JS before passing them back to Unity
+    const resolveLink = (url) => {
+		if (!url || !url.includes("ipfs://")) return url;
+		return url.replace("ipfs://", "https://gateway.ipfs.io/ipfs/");
+	};
+
+    async function login () {
+
+        // Ensure that the user has entered a vaid wallet name
+        if (walletNameInput.value.length < 3) {
+            alert('Please enter a wallet name of at least 3 characters')
+        } else {
+            console.log("login clicked");
+			var user = await Moralis.Web3.authenticate();
+			if(user){
+				console.log(user);
+				user.save();
+			}
+            
+            getBalances = async () => {
+    
+    		  const imageUrls = []
+    
+              const options = { chain: 'eth', address: `${user.get('ethAddress')}` }
+              const optionsPolygon = { chain: 'matic', address: `${user.get('ethAddress')}` }
+
+    		  const userETHNFTs = await Moralis.Web3.getNFTs(options)
+    		  const userPOLYGONNFTs = await Moralis.Web3.getNFTs(optionsPolygon)
+                
+              // Ethereum NFT's in wallet
+    
+    		  for (let i = 0; i < userETHNFTs.length; i++) {
+    			newOptions = { address: `${userETHNFTs[i].token_address}`, token_id: `${userETHNFTs[i].token_id}`, chain: "eth"};
+    			console.log(newOptions)
+    			const metaData2 = await Moralis.Web3API.token.getTokenIdMetadata(newOptions)
+    			console.log("here it is 2", metaData2) // META DATA
+    			metaData2.metadata = JSON.parse(metaData2.metadata)
+    
+    			metaData2.image = resolveLink(metaData2.metadata?.image)
+    			console.log('attempt', i)
+    			console.log(metaData2.image)
+    			imageUrls.push(metaData2.image)
+    			
+    			
+    		  }
+    
+               // Polygon NFT's in wallet
+
+    		  let polyArray = []
+    
+    		  for (let i = 0; i < userPOLYGONNFTs.length; i++) {
+    			newOptions = { address: `${userPOLYGONNFTs[i].token_address}`, token_id: `${userPOLYGONNFTs[i].token_id}`, chain: "matic"};
+    			console.log(newOptions)
+    			const metaData2 = await Moralis.Web3API.token.getTokenIdMetadata(newOptions)
+    			console.log("here it is 2", metaData2) // META DATA
+    			metaData2.metadata = JSON.parse(metaData2.metadata)
+    
+    			metaData2.image = resolveLink(metaData2.metadata?.image)
+    			console.log('iteration', i)
+    			console.log(metaData2.image)
+    			imageUrls.push(metaData2.image)
+    			polyArray.push(
+    				{
+    				  adressNumber: i,
+    				  imageURL: metaData2.image
+    				}
+    			)
+    				
+    		  }
+    
+    
+              // Push up new user to Express server with NFT data and wallet address 
+
+              let walletID = 0
+
+    		  var xhr = new XMLHttpRequest();
+    			xhr.open("POST", "http://localhost:3000/subscribers");
+    			xhr.setRequestHeader("Accept", "application/json");
+    			xhr.setRequestHeader("Content-Type", "application/json");
+    
+    			const userAddress = user.get('ethAddress')
+                const walletName = walletNameInput.value
+                console.log('Wallet name is', walletName)
+    
+    			xhr.onreadystatechange = function () {
+    			if (xhr.readyState === 4) {
+    				console.log(xhr.status);
+    				console.log(xhr.responseText);
+                    walletID = JSON.parse(xhr.responseText)
+                    document.querySelector('.login-form__wallet-id').innerHTML = walletID._id
+                    document.querySelector('.login-form__id-message').style.display = "block"
+    			}};
+    
+    			var newUser = `{
+                    "name": "${String(walletName)}",
+    				"walletAddress": "${String(userAddress)}",
+        			"img_url": "${String(imageUrls)}"
+    			}`;
+    
+    			xhr.send(newUser);
+    
+              }
+              getBalances();
+            }
+
+
+    }
+</script>
