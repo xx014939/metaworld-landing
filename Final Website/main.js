@@ -69,14 +69,22 @@ async function retrieve3dNft() {
 } 
 
 async function submit(){
+
+    if (document.querySelector('#input_name').value != "") {
+        document.querySelector('.patient').style.display = "block"
+    } else {
+        alert("Please fill out all form fields")
+    }
+
     const input = document.querySelector('#input_image');
     let data = input.files[0]
     const imageFile = new Moralis.File(data.name, data)
     await imageFile.saveIPFS();
     let imageHash = imageFile.hash();
+    let threedName = `3D NFT: ${document.querySelector('#input_name').value}`
 
     let metadata = {
-        name: document.querySelector('#input_name').value,
+        name: threedName,
         description: document.querySelector('#input_description').value,
         image: "/ipfs/" + imageHash
     }
@@ -94,9 +102,6 @@ async function submit(){
         royaltiesAmount: 5, // 0.05% royalty. Optional
     })
 
-    // PATCH GLTF URL TO EXPRESS
-
-
 
     // Construct GLTF URL & obtain user ID
     gltfUrl = `https://ipfs.io/ipfs/${imageHash}?filename=${imageHash}.gltf`
@@ -104,7 +109,7 @@ async function submit(){
     console.log("The gltf URL is here -->", gltfUrl)
 
     // Retrieve existing URL's inside of the users 3d nft array
-    const response = await fetch('http://localhost:3000/subscribers/61eda429f894af88ad7adef2')
+    const response = await fetch(`https://tranquil-bayou-15552.herokuapp.com/subscribers/${userID}`)
     const payload = await response.json()
     let existing3DURLs = payload.threed_img_url
     existing3DURLs.push(gltfUrl) // Append new URL to array
@@ -112,7 +117,7 @@ async function submit(){
 
     // Patch user using ID and newly updated array
     var xhr = new XMLHttpRequest();
-    xhr.open("PATCH", `http://localhost:3000/subscribers/${userID}`);
+    xhr.open("PATCH", `https://tranquil-bayou-15552.herokuapp.com/subscribers/${userID}`);
     xhr.setRequestHeader("Accept", "application/json");
     xhr.setRequestHeader("Content-Type", "application/json");
 
@@ -134,10 +139,9 @@ async function submit(){
     document.querySelector('#success_message').innerHTML = 
         `NFT minted. <a href="https://rarible.com/token/${res.data.result.tokenAddress}:${res.data.result.tokenId}">View NFT`;
     document.querySelector('#success_message').style.display = "block";
-    setTimeout(() => {
-        document.querySelector('#success_message').style.display = "none";
-    }, 5000)
 
+    document.querySelector('.patient').style.display = "none"
+    document.querySelector('.success').style.display = "block"
    // retrieve3dNft()
 }
 

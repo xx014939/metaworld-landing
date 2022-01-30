@@ -59,3 +59,8 @@ body{
     background: #0ff;
     color: black;
 }
+
+.btn-primary:focus {
+    background: #0ff;
+    color: black;
+}
