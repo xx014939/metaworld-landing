@@ -82,22 +82,22 @@
     <div class="project-files__container">
         <h2>Softwares</h2>
         <div class="project-files__card-container">
-            <div class="project-files__card">
-                Register Your Wallet
-            </div>
-            <div class="project-files__card">
-                Mint a Three Dimensional NFT
-            </div>
-            <div class="project-files__card">
+            <a href="#" class="project-files__card">
+                Register Wallet (Important)
+            </a>
+            <a href="#" class="project-files__card">
+                3D NFT Minter
+            </a>
+            <a href="#" class="project-files__card">
                 Interact with Your 3D NFT's in VR!
-            </div>
-            <div class="project-files__card">
+            </a>
+            <a href="#" class="project-files__card">
                 Travel Through Space in Your Own NFT Gallery in VR! <br>
                 (You might even make it to the moon 👀)
-            </div>
-            <div class="project-files__card">
+            </a>
+            <a href="#" class="project-files__card">
                 Check out our NFT Marketplace on Avalanche
-            </div>
+            </a>
         </div>
     </div>
     <div class="instructions__container">
@@ -108,7 +108,7 @@
         </ul>
         <h3>Mint a 3D NFT Gass Free (optional)</h3>
         <ul>
-            <li>If you'd like to be one of the first ever human beings to lazy mint a 3D digital object, then download a GLTF file from online and get it minted as your very own NFT via the "3D Minter" link</li>
+            <li>If you'd like to be one of the first ever human beings to lazy mint a 3D digital object, then download a GLTF file from online and get it minted as your very own NFT via the "3D NFT Minter" link</li>
         </ul>
         <h3>View Your 3D NFT in VR (optional)</h3>
         <ul>
@@ -145,8 +145,11 @@
         margin: auto;
         margin-bottom: 10px;
         align-self: center;
-        min-width: 400px;
-        min-height: 45px;
+        min-width: 495px;
+        min-height: 55px;
+        font-size: 20px;
+        color: white;
+        text-decoration: none;
         
     }
     .project-files__card-container {
@@ -262,11 +265,16 @@
     }
 
     .founder {
-        margin-top: 793px;
+        margin-top: 320px;
         display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
+        flex-direction: column;
         justify-content: space-between;
+        align-items: center;
+    }
+    @media (min-width: 1200px) {
+        .founder {
+            margin-top: 525px;
+        }
     }
     .founder__image-container {
         width: 50%;
@@ -277,7 +285,6 @@
     .founder__text-container {
         text-align: center;
         flex-basis: 50%;
-        padding-top: 2%;
         padding-left: 50px;
         padding-right: 50px;
         background: #0a1220;
@@ -298,8 +305,12 @@
         text-align: center;
         color: black;
         padding-left: 75px;
-        margin-top: -1100px;
-        
+        margin-top: -645px;       
+    }
+    @media (min-width: 1200px) {
+        .hero-text-container {
+            margin-top: -850px;  
+        }
     }
     .hero-text-container p:nth-child(1) {
         font-size: 55px;
