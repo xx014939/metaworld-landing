@@ -15,6 +15,11 @@
             <div class="login-form__wallet-id"></div>
             <label class="login-form__id-message">Please save this ID as it is needed in order to access our services</label>
         </div>
+		<div class="button-container">
+			<div class="button-message">Would you like to..</div>
+			<a href="#" class="button-next">View NFT Gallery in VR?</a>
+			<a href="/software/3dMinter.html" class="button-next">Mint a 3D Object?</a>
+		</div>
     </body>
 </html>
 
@@ -118,6 +123,7 @@
                     walletID = JSON.parse(xhr.responseText)
                     document.querySelector('.login-form__wallet-id').innerHTML = walletID._id
                     document.querySelector('.login-form__id-message').style.display = "block"
+					document.querySelector('.button-container').style.display = 'flex'
     			}};
     
     			var newUser = `{

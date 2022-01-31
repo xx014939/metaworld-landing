@@ -55,3 +55,28 @@ body {
     margin-top: 5px;
     display: none;
 }
+
+.button-message {
+    color: white;
+    margin-bottom: 20px;
+    margin-left: 5px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    align-items: center;
+    display: none;
+}
+
+.button-next {
+    color: black;
+    background-color: #0ff;
+    width: 200px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+}

@@ -79,13 +79,38 @@
             <div class="tech-log-image"><img src="ipfs.png"/></div>      
         </div>
     </div>
+
+    <div class="instructions__container">
+        <h1 style="text-decoration: underline;">The Applications</h1>
+        <h3>1. Wallet Registration</h3>
+        <ul>
+            <li>Register your wallet via the "Register Wallet" link. Make sure to keep note of your generated wallet ID!</li>
+        </ul>
+        <h3>2. Mint a 3D NFT Gas Free (optional)</h3>
+        <ul>
+            <li>If you'd like to be one of the first ever human beings to lazy mint a 3D digital object, then download/create a GLTF file and get it minted as your very own NFT via the "3D NFT Minter" link. Here is a cool 3D model from KhronosGroup which we've linked <a style="color: white;" target="_blank" href="https://github.com/KhronosGroup/glTF-Sample-Models/blob/master/2.0/DamagedHelmet/glTF-Embedded/DamagedHelmet.gltf">here</a> for your convenience</li>
+        </ul>
+        <h3>3. View Your 3D NFT in VR (optional)</h3>
+        <ul>
+            <li>If you've lazy minted your 3D NFT, then you might as well check it out in our VR sandbox. You'll be able to interact with your NFT as if it were real! (Oculus headsets only).</li>
+        </ul>
+        <h3>4. View Your Existing 2D NFT's in VR & Visit Our 3D Marketplace</h3>
+        <ul>
+            <li>If you're wallet already contains some NFT's, then please spin up your very own 3D NFT spaceship gallery. This is YOUR piece of the Metaverse, which belongs to YOU.</li>
+            <li>In addition to this, you can push the suspicious looking leaver on the left hand side wall to travel to the moon, where you can stand in our marketplace and interact with other users!</li>
+        </ul>
+        <h3>5. View Our Web Based Marketplace Running on Avalanche</h3>
+        <ul>
+            <li>Finally, please check out our React JS NFT marketplace. This is a modification of the Moralis boilerplate which has been very kindly provided by Ivan and the team. We have added in a special tab to keep track of your 3D Metaverse NFT's, and we have deployed a simple smart contract on Avalanche using Remix.</li>
+        </ul>
+    </div>
     <div class="project-files__container">
         <h2>Softwares</h2>
         <div class="project-files__card-container">
-            <a href="#" class="project-files__card">
+            <a href="/software/loginPage.html" class="project-files__card">
                 Register Wallet (Important)
             </a>
-            <a href="#" class="project-files__card">
+            <a href="/software/3dMinter.html" class="project-files__card">
                 3D NFT Minter
             </a>
             <a href="#" class="project-files__card">
@@ -100,30 +125,6 @@
             </a>
         </div>
     </div>
-    <div class="instructions__container">
-        <h2>Instructions</h2>
-        <h3>Wallet Registration</h3>
-        <ul>
-            <li>Register your wallet via the "Register Wallet" link. Make sure to keep note of your generated wallet ID!</li>
-        </ul>
-        <h3>Mint a 3D NFT Gass Free (optional)</h3>
-        <ul>
-            <li>If you'd like to be one of the first ever human beings to lazy mint a 3D digital object, then download a GLTF file from online and get it minted as your very own NFT via the "3D NFT Minter" link</li>
-        </ul>
-        <h3>View Your 3D NFT in VR (optional)</h3>
-        <ul>
-            <li>If you've lazy minted your 3D NFT, then you might as well check it out in our VR sandbox. You'll be able to interact with your NFT as if it were real! (Oculus headsets only).</li>
-        </ul>
-        <h3>View Your Existing 2D NFT's in VR & Visit Our 3D Marketplace</h3>
-        <ul>
-            <li>If you're wallet already contains some NFT's, then please spin up your very own 3D NFT spaceship gallery. This is YOUR piece of the Metaverse, which belongs to YOU.</li>
-            <li>In addition to this, you can push the suspicious looking leaver on the left hand side wall to travel to the moon, where you can stand in our marketplace and interact with other users!</li>
-        </ul>
-        <h3>View Our Web Based Marketplace Running on Avalanche</h3>
-        <ul>
-            <li>Finally, please check out our React JS NFT marketplace. This is a modification of the Moralis boilerplate which has been very kindly provided by Ivan and the team. We have added in a special tab to keep track of your 3D Metaverse NFT's, and we have deployed a simple smart contract on Avalanche using Remix.</li>
-        </ul>
-    </div>
 </body>
 
 <style>
@@ -133,6 +134,7 @@
         width: 95%;
         margin: auto;
         margin-top: 20px;
+        border-top: 1px solid white;
     }
     .project-files__card:hover {
         border: 1px solid #0ff;
