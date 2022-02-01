@@ -8,8 +8,8 @@
     <div class="hero-container">
         <img class="hero-image" src="New World.webp">
         <div class="hero-text-container">
-            <p><strong>Your</strong>Meta.World</p>
-            <p>YourMeta.World is a brand new Metaverse created by Naail El-Sawah as an entry into the Moralis 2022 Hackathon. YourMeta.World is a proof of concept for what is possible when the Metaverse is truly decentralised.</p>
+            <p><strong>Your</strong>Meta World</p>
+            <p>Your Meta World is a brand new Metaverse created by Naail El-Sawah as an entry into the Moralis 2022 Hackathon. YourMeta.World is a proof of concept for what is possible when the Metaverse is truly decentralised.</p>
         </div>
     </img>
     </div>
@@ -19,7 +19,7 @@
             <p>My name is Naail El-Sawah and I am a recent Computer Science graduate from the United Kingdom. I first began buying Crypto back in 2017 just as that years bull run was forming. At first my interest in Crypto was purely from an investment point of view, but I gradually became more interested in the technology behind the tokens I was investing in and their potential use cases.</p>
             <p>During my second year of university I interned at Zubr VR (among other places), and fell further in love with Virtual Reality technology. During the pandemic I began to work as a web developer, specialising in Ecommerce platforms such as Shopify.  Over the last year I have become fascinated with NFT's and their integration into 3D digital worlds.</p>
             <p>When Mark Zuckerberg announced to the world that he was creating the "Metaverse", the Crypto community became flooded with projects proclaiming to the be the Metaverse of the future. We saw centralised, finite digital land sold at astonishingly high prices to those new to crypto who had enough funds. We saw the mass monetisation of low value projects which promised to offer holders "a place in the Metaverse". And we saw promising technologies of the future overhyped and overvalued in their infancies, in order to earn a quick buck.</p>
-            <p>This was my motivation for YourMeta.World. I set out to create a project which offered some solutions to the problems I saw in todays Metaverse projects.</p>
+            <p>This was my motivation for Your Meta World. I set out to create a project which offered some solutions to the problems I saw in todays Metaverse projects.</p>
         </div>
         <div class="founder__image-container">
             <img src="founder.jpg"/>
@@ -93,11 +93,13 @@
         <h3>3. View Your 3D NFT in VR (optional)</h3>
         <ul>
             <li>If you've lazy minted your 3D NFT, then you might as well check it out in our VR sandbox. You'll be able to interact with your NFT as if it were real! (Oculus headsets only).</li>
+            <li>The link will take you to our Dropbox where you can download a compressed folder as an exe file. Please open the file called "3D GLTF VR Loader" with the "VR" icon after extraction to launch the demo.</li>
         </ul>
         <h3>4. View Your Existing 2D NFT's in VR & Visit Our 3D Marketplace</h3>
         <ul>
             <li>If you're wallet already contains some NFT's, then please spin up your very own 3D NFT spaceship gallery. This is YOUR piece of the Metaverse, which belongs to YOU.</li>
             <li>In addition to this, you can push the suspicious looking leaver on the left hand side wall to travel to the moon, where you can stand in our marketplace and interact with other users!</li>
+            <li>The link will take you to our Dropbox where you can download a compressed folder as an exe file. Please open the file called "YourMetaWorld" with the "VR" icon after extraction to launch the demo.</li>
         </ul>
         <h3>5. View Our Web Based Marketplace Running on Avalanche</h3>
         <ul>
@@ -113,21 +115,75 @@
             <a href="/software/3dMinter.html" class="project-files__card">
                 3D NFT Minter
             </a>
-            <a href="#" class="project-files__card">
+            <a target="_blank"  href="https://www.dropbox.com/s/519jmt8eqie4c3z/3D%20Minter.exe?dl=0" class="project-files__card">
                 Interact with Your 3D NFT's in VR!
             </a>
-            <a href="#" class="project-files__card">
+            <a target="_blank" href="https://www.dropbox.com/s/vfpk7i0bxnypxtf/YourMetaWorld.exe?dl=0" class="project-files__card">
                 Travel Through Space in Your Own NFT Gallery in VR! <br>
-                (You might even make it to the moon 👀)
+                (You might even make it to the moon!)
             </a>
-            <a href="#" class="project-files__card">
+            <a target="_blank" href="https://61f68c14cb2dcfeaf37cd1bc--pedantic-kare-d52428.netlify.app/" class="project-files__card">
                 Check out our NFT Marketplace on Avalanche
             </a>
+        </div>
+    </div>
+    <h2 style="color: white; text-align: center; text-decoration: underline;">Application Architecture & Tech Stack</h2>
+    <div class="architecture-container">       
+        <img src="diagram.png"/>
+    </div>
+    <div class="architecture-explanation">
+        The heart of our software is our custom REST API which is used to dynamically update/retrieve data from our Mongo DB database. The database currently only contains publicly available information about wallets, such as the public wallet address, NFT balance, token balance etc. By storing this information in one place, it makes it easy for us to make HTTP requests to the server in order to retrieve important info about a users wallet. This is especially important when building with softwares such as Unity, which are incompatible with standard JavaScript libraries and Node.
+    </div>
+    <div class="architecture-explanation">
+        We use Moralis for both user authentication and data retrieval (about a wallets contents), as well as for minting NFT's with Moralis's Rarible plugin.
+    </div>
+    <div class="architecture-explanation" style="text-align: left;">
+       Our front end is split up into two main sections.
+       <ul>
+           <li>The vanilla front end which contains this web page, the wallet authenticator and the 3D NFT minter.</li>
+           <li>The React JS front end deployed on Netlify (smart contract deployed on Avalanche), which is responsible for the NFT marketplace.</li>
+       </ul>
+    </div>
+    <div class="architecture-explanation">
+        Finally, we have two VR applications developed in Unity for displaying and interacting with a wallets NFT's. The appropriate information (such as IPFS URL's) are retrieved via a HTTP request. The request returns a Json object which is parsed and then converted into 3D objects inside of the Unity scene. Scripts are then attached to these objects to allow for VR interactability. 
+    </div>
+    <div class="video-explanation">
+        <h2 style="color: white; text-align: center; text-decoration: underline;">Hackathon Video Entry</h2>
+        <div style="display: flex; justify-content: center">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/t9sd1codUew" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="business-container">
+        <h2 style="color: white; text-align: center; text-decoration: underline;">Business Proposition & Vision</h2>
+        <div>
+            Our goal is to become the most popular NFT exchange in the world, overtaking Opensea and its competitors to become the number one NFT trading platform available world wide. We hope to do this by creating a suite of tools which allow users to easily mint various files (sound files, 3d files, code scripts etc.) without technical expertise, and then interact with these NFT's inside of a sandbox. The main application that Your Meta World will provide, will be its very own decentralised Metaverse, in which users will be able to host events inside of their spaceship, create different layouts and scenes, invite friends over and live their digital lives in freedom.<br><br> Users will be able to navigate to the moon where they can buy, sell and trade NFT's and crypto. Artists and entertainers will be able to setup private rooms which users can either enter for free, or gain access to by purchasing an NFT ticket. Users can host digital movie nights, create and play their video games, have social gatherings, network and more. This will remove the centralisation of many industries, especially entertainment.<br><br> Imagine a group of users who hold their very own short film festival, in which individuals empowered by the relatively cheap modern day animation and motion tracking technology currently available participate in with Pixar quality movie entries. Imagine amateur video game creators holding hackathons in their very own Metaworld, and releasing a mind boggling VR experience intertwined with Crypto and NFT's.<br><br> Your Meta World is uniquely positions to be at the heart of all of this, by offering a unique set of totally decentralised tools and resources that users can build upon themselves. Just like other exchanges, we will charge a small percentage of around 2% for all transactions which go through our exchange. However, we will never force users to use our exchange to buy or sell NFT's. It just so happens that most will choose to do so as our exchange offers the best tools and experiences (can you mint a 3D helmet and throw it like a frisbee on Opensea??).
         </div>
     </div>
 </body>
 
 <style>
+    .business-container{
+        width: 95%;
+        text-align: center;
+        color: white;
+        margin: auto;
+        font-size: 20px;
+    }
+    .architecture-explanation {
+        color: white;
+        text-align: center;
+        width: 95%;
+        margin: auto;
+        font-size: 18px;
+        margin-top: 20px;
+    }
+    .architecture-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        margin-top: -50px;
+    }
     .instructions__container {
         color: white;
         text-align: left;
@@ -221,7 +277,7 @@
     }
 
     .solution-block__container {
-        width: 100vh;
+
         margin: auto;
         background-color: #0a1220;
         display: flex;
