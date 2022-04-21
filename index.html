@@ -1,17 +1,35 @@
-<header>
-
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Your Meta World</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-</header>
-<body>
+  </head>
+  <body>
     <div class="hero-container">
         <img class="hero-image" src="New World.webp">
         <div class="hero-text-container">
             <p><strong>Your</strong>Meta World</p>
-            <p>Your Meta World is a brand new Metaverse created by Naail El-Sawah as an entry into the Moralis 2022 Hackathon. YourMeta.World is a proof of concept for what is possible when the Metaverse is truly decentralised.</p>
+            <p>Your Meta World is a brand new Metaverse created by Naail El-Sawah as an entry into the Moralis 2022 Hackathon (and now Meter's 2022 Ethereum Hackathon). YourMeta.World is a proof of concept for what is possible when the Metaverse is truly decentralised.</p>
         </div>
     </img>
+    </div>
+    <div class="achievements">
+        <h2>Achievements</h2>
+        <div class="achievements__badge-row">
+            <div class="achievements__badge-row__achievement">
+                <div><img src="/metaworld-landing/ipfs.png"/></div>
+                <div>Moralis 2022 Hackathon "Best Use of IPFS or NFT.Storage for Content-Addressed Data" Winner</div>
+            </div>
+            <div class="achievements__badge-row__achievement">
+                <div><img src="/metaworld-landing/filecoin-fil-logo.png"/></div>
+                <div>Awarded Filecoin's $5k "Micro-Grant" to Facilitate Further Development</div>
+            </div>
+        </div>
     </div>
     <div class="founder">
         <div class="founder__text-container">
@@ -159,9 +177,51 @@
             Our goal is to become the most popular NFT exchange in the world, overtaking Opensea and its competitors to become the number one NFT trading platform available world wide. We hope to do this by creating a suite of tools which allow users to easily mint various files (sound files, 3D files, code scripts etc.) without technical expertise, and then interact with these NFT's inside of a sandbox. The main application that Your Meta World will provide, will be its very own decentralised Metaverse, in which users will be able to host events inside of their spaceship, create different layouts and scenes, invite friends over and live their digital lives in freedom.<br><br> Users will be able to navigate to the moon where they can buy, sell and trade NFT's and crypto. Artists and entertainers will be able to setup private rooms which users can either enter for free, or gain access to by purchasing an NFT ticket. Users can host digital movie nights, create and play their video games, have social gatherings, network and more. This will remove the centralisation of many industries, especially entertainment.<br><br> Imagine a group of users who hold their very own short film festival, in which individuals empowered by the relatively cheap modern day animation and motion tracking technology currently available participate in with Pixar quality movie entries. Imagine amateur video game creators holding hackathons in their very own Metaworld, and releasing a mind boggling VR experience intertwined with Crypto and NFT's.<br><br> Your Meta World is uniquely positions to be at the heart of all of this, by offering a unique set of totally decentralised tools and resources that users can build upon themselves. Just like other exchanges, we will charge a small percentage of around 2% for all transactions which go through our exchange. However, we will never force users to use our exchange to buy or sell NFT's. It just so happens that most will choose to do so as our exchange offers the best tools and experiences (can you mint a 3D helmet and throw it like a frisbee on Opensea??).
         </div>
     </div>
-</body>
+  </body>
+</html>
 
 <style>
+    .achievements {
+        margin-top: 350px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+    }
+    .achievements h2 {
+        font-size: 35px;
+    }
+    @media (min-width: 769px) {
+        .achievements {
+            margin-top: 550px;
+        }
+    }
+    .achievements__badge-row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        text-align: center;
+        min-width: 350px;
+    }
+    @media (min-width: 769px) {
+        .achievements__badge-row {
+            min-width: 750px;
+        }
+    }
+    .achievements__badge-row__achievement {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 20px;
+        align-content: center;
+        max-width: 250px;
+    }
+    .achievements__badge-row__achievement img {
+        width: 100%;
+        margin-bottom: 25px;
+    }
     .business-container{
         width: 95%;
         text-align: center;
@@ -281,16 +341,16 @@
     }
     .solution-block__container {
 
-margin: auto;
-background-color: #0a1220;
-display: flex;
-flex-direction: column;
-flex-wrap: nowrap;
-justify-content: space-between;
-align-items: center;
-padding: 20px;
+    margin: auto;
+    background-color: #0a1220;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
 
-}
+    }
 
     @media (min-width: 769px) {
     .solution-block__container {
@@ -339,7 +399,7 @@ padding: 20px;
     }
 
     .founder {
-        margin-top: 320px;
+        margin-top: 50px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -347,7 +407,7 @@ padding: 20px;
     }
     @media (min-width: 1200px) {
         .founder {
-            margin-top: 525px;
+            margin-top: 75px;
         }
     }
     .founder__image-container {
@@ -363,8 +423,6 @@ padding: 20px;
         padding-right: 50px;
         background: #0a1220;
         color: white;
-
-        
     }
     .founder__text-container h2 {
         font-size: 35px;
