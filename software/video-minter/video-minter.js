@@ -41,7 +41,6 @@ async function submit(){
         name: document.querySelector('#input_name').value,
         description: document.querySelector('#input_description').value,
         nftImage: 'https://yourmetaworld.mypinata.cloud/ipfs/QmbhhU81rgZNdoZcvqkEBjyjwPHriQBavP335uiYrUDUv2',
-        sceneURL: document.querySelector('#pinata_url').value,
         videoURL: document.querySelector('#video_url').value
     }
     console.log(metadata);
@@ -60,15 +59,15 @@ async function submit(){
 
 
     // Construct GLTF URL & obtain user ID
-    sceneURL = document.querySelector('#pinata_url').value
+    VideoURL = document.querySelector('#video_url').value
     const userID = document.getElementById('user_id').value
 
     // Retrieve existing URL's inside of the users 3d nft array
     const response = await fetch(`https://tranquil-bayou-15552.herokuapp.com/subscribers/${userID}`)
     const payload = await response.json()
-    let existingSceneURLs = payload.unity_scene_url
-    existingSceneURLs.push(sceneURL) // Append new URL to array
-    console.log('This is the new array -->', existingSceneURLs)
+    let existingVideoURLs = payload.theta_video_url
+    existingVideoURLs.push(VideoURL) // Append new URL to array
+    console.log('This is the new array -->', existingVideoURLs)
 
     // Patch user using ID and newly updated array
     var xhr = new XMLHttpRequest();
@@ -85,7 +84,7 @@ async function submit(){
     }};
 
     var existingUser = `{
-        "unity_scene_url": "${String(existingSceneURLs)}"
+        "theta_video_url": "${String(existingVideoURLs)}"
     }`;
 
     xhr.send(existingUser);
