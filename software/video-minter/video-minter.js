@@ -41,7 +41,8 @@ async function submit(){
         name: document.querySelector('#input_name').value,
         description: document.querySelector('#input_description').value,
         nftImage: 'https://yourmetaworld.mypinata.cloud/ipfs/QmbhhU81rgZNdoZcvqkEBjyjwPHriQBavP335uiYrUDUv2',
-        sceneURL: document.querySelector('#pinata_url').value
+        sceneURL: document.querySelector('#pinata_url').value,
+        videoURL: document.querySelector('#video_url').value
     }
     console.log(metadata);
     const jsonFile = new Moralis.File("metadata.json", {base64 : btoa(JSON.stringify(metadata))});
