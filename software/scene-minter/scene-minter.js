@@ -54,7 +54,7 @@ async function submit(){
         userAddress: user.get('ethAddress'),
         tokenType: 'ERC721',
         tokenUri: 'ipfs://' + metadataHash,
-        royaltiesAmount: 5, // 0.05% royalty. Optional
+        royaltiesAmount: 5, // 0.05% royalty
     })
 
 
@@ -89,9 +89,8 @@ async function submit(){
 
     xhr.send(existingUser);
 
-    //console.log(res);
     document.querySelector('#success_message').innerHTML = 
-        `NFT minted. <a href="https://rarible.com/token/${res.data.result.tokenAddress}:${res.data.result.tokenId}">View NFT`;
+    `NFT minted. <a href="https://rarible.com/token/${res.data.result.tokenAddress}:${res.data.result.tokenId}">View NFT`;
     document.querySelector('#success_message').style.display = "block";
 
     document.querySelector('.patient').style.display = "none"
